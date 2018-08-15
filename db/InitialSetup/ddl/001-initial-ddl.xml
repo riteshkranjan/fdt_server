@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet logicalFilePath="db/InitialSetUp/ddl/001-initial-ddl.xml"
+		id="001" author="Ritesh">
+		<sql>
+			CREATE TABLE STUDENT
+			(
+			STUDENT_ID NUMBER(16,0) NOT NULL,
+			STUDENT_NAME VARCHAR2(25 BYTE),
+			AGE NUMBER(16,0),
+			DATE_INSERTED DATE
+			DEFAULT SYSDATE NOT NULL,
+			CONSTRAINT STUDENT_PK PRIMARY KEY
+			(
+			STUDENT_ID
+			)ENABLE
+			);
+		</sql>
+	</changeSet>
+</databaseChangeLog>

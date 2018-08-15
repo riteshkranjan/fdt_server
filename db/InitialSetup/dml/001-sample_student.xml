@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet logicalFilePath="db/InitialSetUp/dml/001-sample_student.xml"
+		id="001" author="Ritesh">
+		<sql>
+			INSERT INTO STUDENT (STUDENT_ID, STUDENT_NAME, AGE) VALUES(1,'Ritesh', 34);
+		</sql>
+	</changeSet>
+</databaseChangeLog>
