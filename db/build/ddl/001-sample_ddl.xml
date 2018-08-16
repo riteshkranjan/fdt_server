@@ -6,7 +6,9 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 	<changeSet logicalFilePath="db/build/ddl/001-sample_ddl.xml"
 		id="001" author="Ritesh">
-		<empty />
+		<sql>
+			CREATE SEQUENCE STUDENT_ID_SEQ INCREMENT BY 1 START WITH 2 NOCACHE ORDER;
+		</sql>
 	</changeSet>
 
 </databaseChangeLog>
