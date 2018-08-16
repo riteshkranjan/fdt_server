@@ -16,7 +16,7 @@ import com.bt.fdt.server.dao.StudentRepository;
 import com.bt.fdt.server.dto.StudentDto;
 import com.bt.fdt.server.entity.Student;
 import com.bt.fdt.server.exception.FDTException;
-import com.bt.fdt.server.mapping.StudnetMapping;
+import com.bt.fdt.server.mapping.StudentMapping;
 
 @Component
 @Transactional
@@ -30,7 +30,7 @@ public class StudentComponentImpl implements StudentComponent {
 	public StudentDto getStudentById(long id) {
 		Optional<Student> findById = repo.findById(id);
 		if (findById.isPresent())
-			return StudnetMapping.entityToDto(findById.get());
+			return StudentMapping.entityToDto(findById.get());
 		logger.error("Student not found with id = " + id);
 		return null;
 	}
@@ -40,7 +40,7 @@ public class StudentComponentImpl implements StudentComponent {
 		Iterable<Student> students = repo.findAll();
 		List<StudentDto> response = new ArrayList<>();
 		for (Student s : students) {
-			response.add(StudnetMapping.entityToDto(s));
+			response.add(StudentMapping.entityToDto(s));
 		}
 		logger.debug("total student found in db = " + response.size());
 		return response;
@@ -48,7 +48,7 @@ public class StudentComponentImpl implements StudentComponent {
 
 	@Override
 	public long addStudent(StudentDto d) {
-		Student entity = StudnetMapping.dtoToEntity(d);
+		Student entity = StudentMapping.dtoToEntity(d);
 		entity.setDateInserted(new Date());
 		Student s = repo.save(entity);
 		return s.getStudentId();

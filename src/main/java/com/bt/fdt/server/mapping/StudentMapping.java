@@ -3,7 +3,7 @@ package com.bt.fdt.server.mapping;
 import com.bt.fdt.server.dto.StudentDto;
 import com.bt.fdt.server.entity.Student;
 
-public class StudnetMapping {
+public class StudentMapping {
 	
 	public static Student dtoToEntity(StudentDto d) {
 		Student e = new Student();

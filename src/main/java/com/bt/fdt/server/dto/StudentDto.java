@@ -28,7 +28,4 @@ public class StudentDto implements Serializable{
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-
-	
-
 }

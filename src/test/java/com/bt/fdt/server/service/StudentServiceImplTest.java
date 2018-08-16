@@ -82,6 +82,15 @@ public class StudentServiceImplTest extends TestBase {
 		s.setStudentId(1);
 		impl.addStudent(s);
 	}
+	
+	@Test(expected = FDTException.class)
+	public void testAddStudentWithEmptyName() throws FDTException {
+		StudentDto s = new StudentDto();
+		s.setAge(21);
+		s.setStudentId(1);
+		s.setStudentName("");
+		impl.addStudent(s);
+	}
 
 	@Test
 	public void testRemoveStudent() {
